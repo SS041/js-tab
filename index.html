@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    </link>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div class="tab">
+        <button onclick="city()">London</button>
+        <button onclick="city()">Paris</button>
+        <button onclick="city()">Tokyo</button>
+    </div>
+    <div class="london content">
+        <h2>London</h2>
+        <p>London is the capital city of England</p>
+    </div>
+    <div class="paris content">
+        <h2>Paris</h2>
+        <p>Paris is the capital of France.</p>
+    </div>
+    <div class="tokyo content">
+        <h2>Tokyo</h2>
+        <p>Tokyo is the capital of Japan.</p>
+    </div>
+    <script type="text/javascript">
+        function city() {
+            var but = document.getElementsByTagName("button");
+            var content = document.getElementsByClassName("content");
+            var tab = document.getElementsByClassName("tab");
+            for (let i = 0; i < but.length; i++) {
+                but[i].addEventListener("click", block);
+
+                function block() {
+                    content[i].style.display = "block";
+                    but[i].style.backgroundColor = "rgb(175, 173, 173)";
+                    for (let j = 0; j < but.length; j++) {
+                        if (j != i) {
+                            content[j].style.display = "none";
+                            but[j].style.backgroundColor = "rgb(241, 241, 241)";
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
